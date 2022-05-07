@@ -10,6 +10,8 @@ spec:
   database:
     size: 200Mi
   customConfig: tpctk-fs-postgresql-conf
+  failover:
+    isDisabled: true
   env:
     - name: POSTGRES_PASSWORD
       valueFrom:
