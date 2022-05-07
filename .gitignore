@@ -361,3 +361,4 @@ cython_debug/
 
 tpctk-fs-kubegres/tpctk-fs-postgres-secret.yaml
 tpctk-fs-pgadmin4/pgadmin-secret.yaml
+tpctk-fs-mysql/mysql-secret.yaml

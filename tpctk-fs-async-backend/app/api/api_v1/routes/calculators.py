@@ -8,7 +8,7 @@ from app import crud
 
 router = APIRouter()
 
-@router.get("/skew_hole_OD", status_code=200)
+@router.get("/skew_hole_OD/", status_code=200)
 async def fetch_item(*, pipe_OD: float, angle_in: int, wall_thickness: float) -> Any:
     """
     Fetch a skewed pipe true OD
