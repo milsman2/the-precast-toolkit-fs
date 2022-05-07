@@ -21,8 +21,7 @@ class CastIronUpdate(CastIronBase):
 
 class CastIronUpdateRestricted(BaseModel):
     id: int
-    label: str
-
+    
 class CastIronInDBBase(CastIronBase):
     id: int
     submitter_id: int

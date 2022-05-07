@@ -34,7 +34,7 @@ class GlobalConfig(BaseSettings):
     """
     DB_SQLITE_URL: str = "sqlite+aiosqlite:///./example.db"
     """
-    DATABASE_URL: Optional[PostgresDsn] = f"postgresql://{DB_USER}:{DB_PWD}@{DB_HOST}:5421/{DB_NAME}"
+    DATABASE_URL: Optional[PostgresDsn] = f"postgresql://{DB_USER}:{DB_PWD}@{DB_HOST}:5422/{DB_NAME}"
     DB_ECHO_LOG: bool = False
 
     @property
