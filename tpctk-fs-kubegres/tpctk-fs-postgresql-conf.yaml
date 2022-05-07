@@ -12,7 +12,7 @@ data:
     dt=$(date '+%d/%m/%Y %H:%M:%S');
     echo "$dt - Running init script the 1st time Primary PostgreSql container is created...";
     customDatabaseName="tpctk-fs"
-    customUserName="tpctck-fs-user"
+    customUserName="tpctk-fs-user"
     echo "$dt - Running: psql -v ON_ERROR_STOP=1 --username $POSTGRES_USER --dbname $POSTGRES_DB ...";
     psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
     CREATE DATABASE $customDatabaseName;
