@@ -3,4 +3,4 @@ kind: Kustomization
 
 resources:
   - tpctk-fs-kubegres.yaml
-  - tpctk-fs-postgres-conf.yaml
+  - tpctk-postgres-fs-conf.yaml
