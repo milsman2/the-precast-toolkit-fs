@@ -42,7 +42,7 @@ async def read_users_me(current_user: User = Depends(deps.get_current_user)):
     return user
 
 
-"""
+
 @router.post("/signup/", response_model=schemas.User, status_code=201)
 async def create_user_signup(*, db: AsyncSession = Depends(get_db), user_in: schemas.user.UserCreate) -> Any:
     users = await db.execute(select(User).where(User.email == user_in.email))
@@ -55,4 +55,3 @@ async def create_user_signup(*, db: AsyncSession = Depends(get_db), user_in: sch
     user = await crud.user.create(db=db, obj_in=user_in)
 
     return user
-"""

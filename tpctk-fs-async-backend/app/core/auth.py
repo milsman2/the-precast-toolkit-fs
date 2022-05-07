@@ -15,7 +15,7 @@ JWTPayloadMapping = MutableMapping[
     str, Union[datetime, bool, str, List[str], List[int]]
 ]
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl=f"/proxy/8000/api/v1/auth/login/")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl=f"/api/v1/auth/login/")
 
 
 async def authenticate(*, email: str, password: str, db: AsyncSession) -> Optional[User]:
