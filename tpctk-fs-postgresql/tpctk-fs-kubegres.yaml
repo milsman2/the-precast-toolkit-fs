@@ -1,0 +1,28 @@
+apiVersion: kubegres.reactive-tech.io/v1
+kind: Kubegres
+metadata:
+  name: tpctk-fs-kubegres
+  namespace: the-precast-toolkit-fs
+spec:
+  replicas: 3
+  image: postgres:14.1
+  port: 5432
+  database:
+    size: 200Mi
+  customConfig: tpctk-fs-postgresql-conf
+  env:
+    - name: POSTGRES_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: tpctk-fs-postgres-secret
+          key: superUserPassword
+    - name: POSTGRES_REPLICATION_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: tpctk-fs-postgres-secret
+          key: replicationUserPassword
+    - name: POSTGRES_MY_DB_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: tpctk-fs-postgres-secret
+          key: myDbUserPassword

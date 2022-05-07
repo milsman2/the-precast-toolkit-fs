@@ -1,0 +1,58 @@
+pgadmin4:
+  replicaCount: 1
+  image:
+    registry: docker.io
+    repository: dpage/pgadmin4
+    tag: "6.7"
+  pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 80
+    targetPort: 80
+    portName: http
+  serviceAccount:
+    create: false
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+  serverDefinitions:
+    enabled: false
+  networkPolicy:
+    enabled: true
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: "staging-issuer-amd64"
+    ingressClassName: "nginx"
+    hosts:
+      - host: tpctk-fs-pgadmin4.kanebroslab.com
+        paths:
+          - path: /
+            pathType: Prefix
+    tls:
+      - secretName: tpctk-fs-pgadmin4-tls-staging-v1
+        hosts:
+          - tpctk-fs-pgadmin4.kanebroslab.com
+  env:
+    enhanced_cookie_protection: "False"
+    email: "milsman2@gmail.com"
+  existingSecret: "pgadmin-secret"
+  persistentVolume:
+    enabled: true
+    accessModes:
+      - ReadWriteOnce  
+    size: 10Gi
+    storageClass: "longhorn"
+  VolumePermissions:
+    enabled: true
+  containerPorts:
+    http: 80
+  nodeSelector:
+    nodeCategory: worker
+  test:
+    image:
+      registry: docker.io
+      repository: busybox
+      tag: latest
