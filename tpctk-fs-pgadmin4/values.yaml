@@ -3,7 +3,7 @@ pgadmin4:
   image:
     registry: docker.io
     repository: dpage/pgadmin4
-    tag: "6.7"
+    tag: "6.8"
   pullPolicy: IfNotPresent
   service:
     type: ClusterIP
@@ -24,17 +24,17 @@ pgadmin4:
   ingress:
     enabled: true
     annotations:
-      cert-manager.io/cluster-issuer: "staging-issuer-amd64"
+      cert-manager.io/cluster-issuer: "prod-issuer-amd64"
     ingressClassName: "nginx"
     hosts:
-      - host: tpctk-fs-pgadmin4.kanebroslab.com
+      - host: tpctk-fs-pgadmin4.precasttoolkit.com
         paths:
           - path: /
             pathType: Prefix
     tls:
-      - secretName: tpctk-fs-pgadmin4-tls-staging-v1
+      - secretName: tpctk-fs-pgadmin4-tls-prod-v2
         hosts:
-          - tpctk-fs-pgadmin4.kanebroslab.com
+          - tpctk-fs-pgadmin4.precasttoolkit.com
   env:
     enhanced_cookie_protection: "False"
     email: "milsman2@gmail.com"
