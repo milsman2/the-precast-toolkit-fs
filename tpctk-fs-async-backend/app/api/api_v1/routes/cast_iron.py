@@ -22,9 +22,9 @@ async def get_user_items(*, db: AsyncSession = Depends(get_db)) -> Any:
     Fetch all cast iron
     """
     all_cast_iron = await crud.cast_iron.get_multi(db=db)
+    print(all_cast_iron)
     if not all_cast_iron:
         return {"results": list()}
-
     return {"results": list(all_cast_iron)}
 
 @router.get("/search/", status_code=200, response_model=CastIronSearchResults)
@@ -34,7 +34,7 @@ async def search_cast_iron(*, keyword: str = Query(None, min_length=3, example="
     """
     cast_iron = await crud.cast_iron.get_multi(db=db)
     results = filter(lambda cast_iron: keyword.lower() in cast_iron.label.lower(), cast_iron)
-
+    print(cast_iron)
     return {"results": list(results)}
 
 @router.get("/{cast_iron_id}", status_code=200, response_model=CastIron)
