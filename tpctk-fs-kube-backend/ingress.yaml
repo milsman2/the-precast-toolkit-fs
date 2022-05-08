@@ -4,13 +4,13 @@ metadata:
   name: tpctk-fastapi
   namespace: the-precast-toolkit-fs
   annotations:
-    cert-manager.io/cluster-issuer: 'staging-issuer-amd64'
+    cert-manager.io/cluster-issuer: 'prod-issuer-amd64'
 spec:
   ingressClassName: nginx
   tls:
   - hosts:
     - fastapi.precasttoolkit.com
-    secretName: tpctk-fs-tls-staging-v1
+    secretName: tpctk-fs-tls-prod-v1
   rules:
   - host: fastapi.precasttoolkit.com
     http:
