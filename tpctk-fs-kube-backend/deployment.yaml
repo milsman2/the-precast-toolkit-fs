@@ -19,7 +19,7 @@ spec:
         image: milsman2/tpctk-fs-async-backend:v0.1
         ports:
         - containerPort: 8000
-          name: tpctk-fs-kube-backend
+          name: tpctk-fastapi
         env:
         - name: DB_USER
           valueFrom:
