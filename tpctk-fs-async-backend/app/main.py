@@ -29,7 +29,9 @@ def get_application() -> FastAPI:
     "http://localhost:3000",
     "https://localhost:3000",
     "http://localhost",
-    "https://localhost"
+    "https://localhost",
+    "http://fastapi.precastttolkit.com",
+    "https://fastapi.precastttolkit.com"
 ]
 
     application.add_middleware(
