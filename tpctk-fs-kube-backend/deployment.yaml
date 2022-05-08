@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tpctk-fs-kube-backend
+  name: tpctk-fastapi
   namespace: the-precast-toolkit-fs
 spec:
   selector:
     matchLabels:
-      app: tpctk-fs-kube-backend
+      app: tpctk-fastapi
   replicas: 1
   template:
     metadata:
       labels:
-        app: tpctk-fs-kube-backend
+        app: tpctk-fastapi
     spec:
       containers:
-      - name: tpctk-fs-kube-backend
+      - name: tpctk-fastapi
         image: milsman2/tpctk-fs-async-backend:v0.1
         ports:
         - containerPort: 8000
