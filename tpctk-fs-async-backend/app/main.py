@@ -25,9 +25,16 @@ def get_application() -> FastAPI:
 
     root_router = APIRouter()
 
+    origins = [
+    "http://localhost:3000",
+    "https://localhost:3000",
+    "http://localhost",
+    "https://localhost"
+]
+
     application.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

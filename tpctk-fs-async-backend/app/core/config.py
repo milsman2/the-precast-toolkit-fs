@@ -17,8 +17,8 @@ class EnvironmentEnum(str, Enum):
     LOCAL = "local"
 
 class GlobalConfig(BaseSettings):
-    TITLE: str = "Full Stack Inventory"
-    DESCRIPTION: str = "A REST API for DevOps Focused Full Stack Inventory Management"
+    TITLE: str = "Full Stack Precast Concrete"
+    DESCRIPTION: str = "A REST API for DevOps Focused Full Stack Precast Concrete"
     JWT_SECRET: str = secrets.token_urlsafe(32)
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 8
     ALGORITHM = "HS256"
@@ -31,9 +31,6 @@ class GlobalConfig(BaseSettings):
     DB_PWD: str =  os.environ["DB_PWD"]
     DB_HOST: str = os.environ["DB_HOST"]
     DB_NAME: str = os.environ["DB_NAME"]
-    """
-    DB_SQLITE_URL: str = "sqlite+aiosqlite:///./example.db"
-    """
     DATABASE_URL: Optional[PostgresDsn] = f"postgresql://{DB_USER}:{DB_PWD}@{DB_HOST}:5422/{DB_NAME}"
     DB_ECHO_LOG: bool = False
 
