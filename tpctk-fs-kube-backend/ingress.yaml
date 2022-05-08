@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tpctk-fs-kube-backend
+  namespace: the-precast-toolkit-fs
+  annotations:
+    cert-manager.io/cluster-issuer: 'staging-amd64-issuer'
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - fastapi.precasttoolkit.com
+    secretName: tpctk-fs-tls-staging-v1
+  rules:
+  - host: fastapi.precasttoolkit.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: tpctk-fs-kube-backend
+            port:
+              number: 8000

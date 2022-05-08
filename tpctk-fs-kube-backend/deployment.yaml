@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tpctk-fs-kube-backend
+  namespace: the-precast-toolkit-fs
+spec:
+  selector:
+    matchLabels:
+      app: tpctk-fs-kube-backend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tpctk-fs-kube-backend
+    spec:
+      containers:
+      - name: tpctk-fs-kube-backend
+        image: milsman2/tpctk-fs-async-backend:v0.1
+        ports:
+        - containerPort: 8000
+          name: tpctk-fs-kube-backend
+        env:
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: fastapi-secret
+              key: database_user
+        - name: DB_PWD
+          valueFrom:
+            secretKeyRef:
+              name: fastapi-secret
+              key: database_password
+        - name: DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: fastapi-secret
+              key: database_host
+        - name: DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: fastapi-secret
+              key: database_name
+      nodeSelector:
+        nodeCategory: worker
