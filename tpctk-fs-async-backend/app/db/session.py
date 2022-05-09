@@ -4,9 +4,8 @@ from app.core.config import settings
 
 engine = create_async_engine(settings.async_database_url)
 
-async_session = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
+async_session = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False, pool_pre_ping=True)
 
 async def get_db():
     async with async_session() as session:
         yield session
-        await session.commit()
