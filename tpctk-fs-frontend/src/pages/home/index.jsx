@@ -3,7 +3,6 @@ import FastAPIClient from '../../client';
 import config from '../../config';
 import CastIronTable from "../../components/CastIronTable";
 import Loader from '../../components/Loader';
-import Card from '../../components/Card'
 
 const client = new FastAPIClient(config);
 
@@ -47,7 +46,7 @@ const Home = () => {
                     <div className="container px-5 py-12 mx-auto lg:px-20">
                          <div className="pb-6 mb-12 text-white ">
                               <h1 className="mb-6 text-3xl font-medium text-white">
-                                   The Full Stack Inventory - A React + FastAPI Project
+                                   The Full Stack Precast Toolkit - A React + FastAPI Kubernetes Project
                               </h1>
                               <div className="container flex justify-center items-center mb-6">
                                    <div className="relative w-full max-w-xs m-auto">
@@ -59,9 +58,6 @@ const Home = () => {
                                              <button onClick={() => fetchCastIrons(true)} className="h-10 w-20 text-white rounded bg-teal-500 hover:bg-teal-600">Search</button>
                                         </div>
                                    </div>
-                              </div>
-                              <div>
-                                   <Card />
                               </div>
                               <div>
                                    <CastIronTable

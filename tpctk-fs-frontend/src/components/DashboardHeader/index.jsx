@@ -52,7 +52,7 @@ function DashboardHeader() {
                 <path
                     d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/>
             </svg></a>
-            <span className="font-semibold text-xl tracking-tight">Full Stack Inventory</span>
+            <span className="font-semibold text-xl tracking-tight">The Precast Toolkit - Full Stack</span>
 
         </div>
         <div className="block lg:hidden">
@@ -67,7 +67,7 @@ function DashboardHeader() {
         </div>
         <div className={`animate-fade-in-down w-full ${toggleMenu ? "block" : "hidden"} flex-grow lg:flex lg:items-center lg:w-auto`}>
             <div className="text-sm lg:flex-grow">
-                <a href={"https://fastapi-recipe-app.herokuapp.com/docs"} target={"_blank"} rel={"noreferrer"}
+                <a href={"https:fastapi.precasttoolkit.com/docs"} target={"_blank"} rel={"noreferrer"}
                     className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mx-4">
                     API Docs
                 </a>
