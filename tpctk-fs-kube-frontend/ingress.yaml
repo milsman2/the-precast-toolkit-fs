@@ -4,13 +4,13 @@ metadata:
   name: fs-frontend-ingress
   namespace: the-precast-toolkit-fs
   annotations:
-    cert-manager.io/cluster-issuer: 'staging-issuer-amd64'
+    cert-manager.io/cluster-issuer: 'prod-issuer-amd64'
 spec:
   ingressClassName: nginx
   tls:
   - hosts:
     - fs.precasttoolkit.com
-    secretName: tpctk-fs-frontend-tls-staging-v1
+    secretName: tpctk-fs-frontend-tls-prod-v1
   rules:
   - host: fs.precasttoolkit.com
     http:
