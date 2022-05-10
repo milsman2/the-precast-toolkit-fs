@@ -9,10 +9,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - fs.precastttoolkit.com
+    - fs.precasttoolkit.com
     secretName: tpctk-fs-frontend-tls-staging-v1
   rules:
-  - host: fs.precastttoolkit.com
+  - host: fs.precasttoolkit.com
     http:
       paths:
       - path: /
