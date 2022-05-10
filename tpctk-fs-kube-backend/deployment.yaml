@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: tpctk-fastapi
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tpctk-fastapi
-        image: milsman2/tpctk-fs-async-backend:v0.7
+        image: milsman2/tpctk-fs-async-backend:v0.8
         ports:
         - containerPort: 8000
           name: tpctk-fastapi
@@ -41,5 +41,12 @@ spec:
             secretKeyRef:
               name: fastapi-secret
               key: database_name
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "0.5"
+          limits:
+            memory: "1Gi"
+            cpu: "1"
       nodeSelector:
         nodeCategory: worker
