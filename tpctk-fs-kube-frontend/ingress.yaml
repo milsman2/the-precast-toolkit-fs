@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fs-frontend-ingress
+  namespace: the-precast-toolkit-fs
+  annotations:
+    cert-manager.io/cluster-issuer: 'staging-issuer-amd64'
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - fs.precastttoolkit.com
+    secretName: tpctk-fs-frontend-tls-staging-v1
+  rules:
+  - host: fs.precastttoolkit.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: fs-frontend
+            port:
+              number: 80

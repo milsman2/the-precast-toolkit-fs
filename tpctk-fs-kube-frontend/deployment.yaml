@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fs-frontend
+  namespace: the-precast-toolkit-fs
+spec:
+  selector:
+    matchLabels:
+      app: fs-frontend
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: fs-frontend
+    spec:
+      nodeSelector:
+        nodeCategory: worker
+      containers:
+      - name: fs-frontend
+        image: milsman2/tpctk-fs-frontend:v0.1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
