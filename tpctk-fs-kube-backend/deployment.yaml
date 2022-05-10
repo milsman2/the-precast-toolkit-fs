@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tpctk-fastapi
-        image: milsman2/tpctk-fs-async-backend:v0.4
+        image: milsman2/tpctk-fs-async-backend:v0.5
         ports:
         - containerPort: 8000
           name: tpctk-fastapi
