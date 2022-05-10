@@ -44,11 +44,11 @@ const Home = () => {
           <>
                <section className="bg-black ">
                     <div className="container px-5 py-12 mx-auto lg:px-20">
-                         <div className="pb-6 mb-12 text-white ">
-                              <h1 className="mb-6 text-3xl font-medium text-white">
-                                   The Full Stack Precast Toolkit - A React + FastAPI Kubernetes Project
+                         <div className="pb-3 mb-6">
+                              <h1 className="mb-3 text-3xl font-medium text-white">
+                                   A Kubernetes operated React - FastAPI - PostgreSQL project
                               </h1>
-                              <div className="container flex justify-center items-center mb-6">
+                              <div className="container flex justify-center items-center mb-3">
                                    <div className="relative w-full max-w-xs m-auto">
                                         <input
                                              type="text"
