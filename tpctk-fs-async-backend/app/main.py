@@ -25,9 +25,18 @@ def get_application() -> FastAPI:
 
     root_router = APIRouter()
 
+    origins = [
+    "http://localhost:3000",
+    "http://localhost",
+    "http://fastapi.precastttolkit.com",
+    "https://fastapi.precastttolkit.com",
+    "http://fs.precasttoolkit.com",
+    "https://fs.precasttoolkit.com"
+]
+
     application.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.origins,
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
