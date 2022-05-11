@@ -17,7 +17,7 @@ spec:
         nodeCategory: worker
       containers:
       - name: fs-frontend
-        image: milsman2/tpctk-fs-frontend:v0.31
+        image: milsman2/tpctk-fs-frontend:v0.32
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80

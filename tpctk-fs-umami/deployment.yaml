@@ -16,13 +16,13 @@ spec:
     spec:
       containers:
       - name: umami
-        image: ghcr.io/mikecao/umami:postgresql-b756fcd
+        image: ghcr.io/mikecao/umami:mysql-v1.31.0
         ports:
         - containerPort: 3000
           name: umami
         env:
         - name: DATABASE_TYPE
-          value: postgresql
+          value: mysql
         - name: DATABASE_URL
           valueFrom:
             secretKeyRef:
@@ -34,4 +34,4 @@ spec:
               name: umami-config
               key: hash-salt
       nodeSelector:
-        kubernetes.io/hostname: fsn-qws-app2
+        nodeCategory: worker
