@@ -15,7 +15,6 @@ mysql:
     forcePassword: true
     usePasswordFiles: false
   primary:
-    fullname: mysql
     configuration: |-
       [mysqld]
       default_authentication_plugin=mysql_native_password
@@ -47,8 +46,6 @@ mysql:
       port=3306
       socket=/opt/bitnami/mysql/tmp/mysql.sock
       pid-file=/opt/bitnami/mysql/tmp/mysqld.pid
-    updateStrategy: RollingUpdate
-    podAntiAffinityPreset: soft
     nodeSelector:
       nodeCategory: worker
     podSecurityContext:
