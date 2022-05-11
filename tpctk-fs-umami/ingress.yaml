@@ -4,7 +4,7 @@ metadata:
   name: umami
   namespace: umami
   annotations:
-    cert-manager.io/cluster-issuer: 'prod-amd64-issuer'
+    cert-manager.io/cluster-issuer: 'prod-issuer-amd64'
 spec:
   ingressClassName: nginx
   tls:
