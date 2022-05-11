@@ -14,83 +14,51 @@ mysql:
     existingSecret: "mysql-secret"
     forcePassword: true
     usePasswordFiles: false
-  primary:
-    configuration: |-
-      [mysqld]
-      default_authentication_plugin=mysql_native_password
-      skip-name-resolve
-      explicit_defaults_for_timestamp
-      basedir=/opt/bitnami/mysql
-      plugin_dir=/opt/bitnami/mysql/lib/plugin
-      port=3306
-      socket=/opt/bitnami/mysql/tmp/mysql.sock
-      datadir=/bitnami/mysql/data
-      tmpdir=/opt/bitnami/mysql/tmp
-      max_allowed_packet=16M
-      bind-address=0.0.0.0
-      pid-file=/opt/bitnami/mysql/tmp/mysqld.pid
-      log-error=/opt/bitnami/mysql/logs/mysqld.log
-      character-set-server=UTF8
-      collation-server=utf8_general_ci
-      slow_query_log=0
-      slow_query_log_file=/opt/bitnami/mysql/logs/mysqld.log
-      long_query_time=10.0
-
-      [client]
-      port=3306
-      socket=/opt/bitnami/mysql/tmp/mysql.sock
-      default-character-set=UTF8
-      plugin_dir=/opt/bitnami/mysql/lib/plugin
-
-      [manager]
-      port=3306
-      socket=/opt/bitnami/mysql/tmp/mysql.sock
-      pid-file=/opt/bitnami/mysql/tmp/mysqld.pid
-    nodeSelector:
-      nodeCategory: worker
-    podSecurityContext:
-      enabled: true
-      fsGroup: 1001
-    containerSecurityContext:
-      enabled: true
-      runAsUser: 1001
-    resources:
-      requests:
-        cpu: 250m
-        memory: 256Mi
-    livenessProbe:
-      enabled: true
-      initialDelaySeconds: 5
-      periodSeconds: 10
-      timeoutSeconds: 1
-      failureThreshold: 3
-      successThreshold: 1
-    readinessProbe:
-      enabled: true
-      initialDelaySeconds: 5
-      periodSeconds: 10
-      timeoutSeconds: 1
-      failureThreshold: 3
-      successThreshold: 1
-    startupProbe:
-      enabled: true
-      initialDelaySeconds: 15
-      periodSeconds: 10
-      timeoutSeconds: 1
-      failureThreshold: 10
-      successThreshold: 1
-    persistence:
-      enabled: true
-      storageClass: "longhorn"
-      accessModes:
-        - ReadWriteOnce
-      size: 8Gi
-    service:
-      type: ClusterIP
-      port: 3306
-      externalTrafficPolicy: Cluster
-    pdb:
-      enabled: false
+  nodeSelector:
+    nodeCategory: worker
+  podSecurityContext:
+    enabled: true
+    fsGroup: 1001
+  containerSecurityContext:
+    enabled: true
+    runAsUser: 1001
+  resources:
+    requests:
+      cpu: 250m
+      memory: 256Mi
+  livenessProbe:
+    enabled: true
+    initialDelaySeconds: 5
+    periodSeconds: 10
+    timeoutSeconds: 1
+    failureThreshold: 3
+    successThreshold: 1
+  readinessProbe:
+    enabled: true
+    initialDelaySeconds: 5
+    periodSeconds: 10
+    timeoutSeconds: 1
+    failureThreshold: 3
+    successThreshold: 1
+  startupProbe:
+    enabled: true
+    initialDelaySeconds: 15
+    periodSeconds: 10
+    timeoutSeconds: 1
+    failureThreshold: 10
+    successThreshold: 1
+  persistence:
+    enabled: true
+    storageClass: "longhorn"
+    accessModes:
+      - ReadWriteOnce
+    size: 8Gi
+  service:
+    type: ClusterIP
+    port: 3306
+    externalTrafficPolicy: Cluster
+  pdb:
+    enabled: false
   serviceAccount:
     create: true
   rbac:
