@@ -47,8 +47,6 @@ mysql:
       port=3306
       socket=/opt/bitnami/mysql/tmp/mysql.sock
       pid-file=/opt/bitnami/mysql/tmp/mysqld.pid
-    updateStrategy: RollingUpdate
-    podAntiAffinityPreset: soft
     nodeSelector:
       nodeCategory: worker
     podSecurityContext:
