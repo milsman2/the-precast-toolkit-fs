@@ -15,7 +15,7 @@ mysql:
     forcePassword: true
     usePasswordFiles: false
   primary:
-    fullname: mysql
+    fullname: "mysql"
     configuration: |-
       [mysqld]
       default_authentication_plugin=mysql_native_password
