@@ -45,6 +45,15 @@ class GlobalConfig(BaseSettings):
     # Api V1 prefix
     API_V1_STR = "/api/v1"
 
+    origins = [
+    "http://localhost:3000",
+    "http://localhost",
+    "http://fastapi.precastttolkit.com",
+    "https://fastapi.precastttolkit.com",
+    "http://fs.precasttoolkit.com",
+    "https://fs.precasttoolkit.com"
+]
+
     class Config:
         case_sensitive = True
 
