@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tpctk-fastapi
-        image: milsman2/tpctk-fs-async-backend:v0.8
+        image: milsman2/tpctk-fs-async-backend:v0.9
         ports:
         - containerPort: 8000
           name: tpctk-fastapi
@@ -46,7 +46,7 @@ spec:
             memory: "512Mi"
             cpu: "0.5"
           limits:
-            memory: "1Gi"
-            cpu: "1"
+            memory: "2Gi"
+            cpu: "2"
       nodeSelector:
         nodeCategory: worker
