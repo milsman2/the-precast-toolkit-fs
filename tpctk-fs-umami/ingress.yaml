@@ -4,13 +4,13 @@ metadata:
   name: umami
   namespace: umami
   annotations:
-    cert-manager.io/cluster-issuer: 'staging-amd64-issuer'
+    cert-manager.io/cluster-issuer: 'prod-issuer-amd64'
 spec:
   ingressClassName: nginx
   tls:
   - hosts:
     - umami.precasttoolkit.com
-    secretName: umami-tls-staging-v1
+    secretName: umami-tls-prod-v1
   rules:
   - host: umami.precasttoolkit.com
     http:
