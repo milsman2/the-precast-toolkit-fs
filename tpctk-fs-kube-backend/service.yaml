@@ -5,7 +5,8 @@ metadata:
   namespace: the-precast-toolkit-fs
 spec:
   ports:
-  - port: 8000
+  - protocol: TCP
+    port: 8000
     name: tpctk-fastapi
   selector:
     app: tpctk-fastapi
