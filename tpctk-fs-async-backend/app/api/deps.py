@@ -4,8 +4,6 @@ from jose import jwt, JWTError
 from app.core.auth import oauth2_scheme
 from app.core.config import settings
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select
-from sqlalchemy.orm import selectinload
 from app.models.user import User
 from app import crud
 from app.db.session import get_db
