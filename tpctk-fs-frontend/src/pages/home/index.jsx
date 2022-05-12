@@ -30,21 +30,18 @@ const Home = () => {
           });
      }
 
-     console.log(castIrons)
      if (loading)
           return <Loader />
 
      return (
           <>
-               <section className="bg-black h-screen">
-                    <div className="container flex flex-col flex-wrap py-6 lg:px-10">
-                         <div className="text-white mb-6">
-                              <h1 className="text-3xl font-medium">
-                                   The Full Stack Inventory - A React + FastAPI Project
-                              </h1>
-                              <div className='container mx-auto'>
-                                   <CastIron castIrons = {castIrons} />
-                              </div>
+               <section className="flex flex-col flex-wrap py-6 lg:px-10 bg-black">
+                    <div className="text-white mb-6">
+                         <h1 className="text-3xl font-medium">
+                              The Precast Toolkit - A Kubernetes orchestrated React - FastAPI - PostgreSQL Stack
+                         </h1>
+                         <div className='container mx-auto'>
+                              <CastIron castIrons = {castIrons} />
                          </div>
                     </div>
                </section>

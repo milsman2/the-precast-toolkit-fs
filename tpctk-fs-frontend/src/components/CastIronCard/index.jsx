@@ -4,9 +4,9 @@ const CastIronCard = ({castIron}) => {
 
     return (
         <article className='overflow-hidden rounded-lg shadow-lg bg-stone-500 flex flex-col flex-1'>
-            <header className='items-center justify-between leading-tight p-2 md:p-4'>
+            <header className='leading-tight p-2 md:p-4'>
                 <h1 className="text-lg">
-                    <div>Common Name: {castIron?.description}</div>
+                    <div>{castIron?.description}</div>
                 </h1>
             </header>
             <h2 className='ml-8 p-1 text-grey-darker text-sm'>
