@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import FastAPIClient from '../../client';
 import config from '../../config';
-import CastIronTable from "../../components/CastIronTable";
+import CastIron from "../../components/CastIron";
 import Loader from '../../components/Loader';
 
 const client = new FastAPIClient(config);
@@ -11,24 +11,18 @@ const Home = () => {
 
      const [loading, setLoading] = useState(true)
      const [castIrons, setCastIrons] = useState([])
-     const [searchValue, setSearchValue] = useState("grate")
 
      useEffect(() => {
           // FETCH THE CAST IRON
           fetchCastIrons()
      }, [])
 
+     const fetchCastIrons = () => {
 
-     const fetchCastIrons = (search) => {
-
-          if (searchValue?.length <= 0 && search)
-               return alert("Please Enter Search Text")
-
-          // SET THE LOADER TO TRUE
           setLoading(true)
 
           // GET THE CAST IRON FROM THE API
-          client.getCastIrons(searchValue).then((data) => {
+          client.getAllCastIron().then((data) => {
                setLoading(false)
 
                // SET THE CAST IRON DATA
@@ -36,33 +30,20 @@ const Home = () => {
           });
      }
 
-
+     console.log(castIrons)
      if (loading)
           return <Loader />
 
      return (
           <>
-               <section className="bg-black ">
-                    <div className="container px-5 py-12 mx-auto lg:px-20">
-                         <div className="pb-3 mb-6">
-                              <h1 className="mb-3 text-3xl font-medium text-white">
-                                   A Kubernetes operated React - FastAPI - PostgreSQL project
+               <section className="bg-black h-screen">
+                    <div className="container flex flex-col flex-wrap py-6 lg:px-10">
+                         <div className="text-white mb-6">
+                              <h1 className="text-3xl font-medium">
+                                   The Full Stack Inventory - A React + FastAPI Project
                               </h1>
-                              <div className="container flex justify-center items-center mb-3">
-                                   <div className="relative w-full max-w-xs m-auto">
-                                        <input
-                                             type="text"
-                                             onChange={(e) => setSearchValue(e.target.value)}
-                                             className={`text-teal-500 hover:text-teal-700 h-14 w-full max-w-xs m-auto pr-8 pl-5 rounded z-0 focus:shadow focus:outline-none`} placeholder="Search cast iron..." />
-                                        <div className="absolute top-2 right-2">
-                                             <button onClick={() => fetchCastIrons(true)} className="h-10 w-20 text-white rounded bg-teal-500 hover:bg-teal-600">Search</button>
-                                        </div>
-                                   </div>
-                              </div>
-                              <div>
-                                   <CastIronTable
-                                        castIrons={castIrons}
-                                   />
+                              <div className='container mx-auto'>
+                                   <CastIron castIrons = {castIrons} />
                               </div>
                          </div>
                     </div>
