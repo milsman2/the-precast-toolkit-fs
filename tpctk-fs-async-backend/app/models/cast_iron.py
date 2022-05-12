@@ -7,7 +7,7 @@ from app.db.base_class import Base
 class Cast_Iron(Base):
     id = Column(Integer, primary_key=True, index=True)
     label = Column(String(256), nullable=False)
-    Vulcan_style_code = Column(String(64), nullable=False, unique=True)
+    Vulcan_style_code = Column(String(64), nullable=False, unique=False)
     EJ_code = Column(String(64))
     SIP_code = Column(String(64))
     Accucast_code = Column(String(64))
