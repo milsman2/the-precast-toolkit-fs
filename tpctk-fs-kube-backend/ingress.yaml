@@ -5,6 +5,8 @@ metadata:
   namespace: the-precast-toolkit-fs
   annotations:
     cert-manager.io/cluster-issuer: 'prod-issuer-amd64'
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/affinity-mode: persistent
 spec:
   ingressClassName: nginx
   tls:
