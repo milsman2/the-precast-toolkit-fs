@@ -3,6 +3,7 @@ import FastAPIClient from '../../client';
 import config from '../../config';
 import CastIron from "../../components/CastIron";
 import Loader from '../../components/Loader';
+import useToggle from '../../hooks/useToggle'
 
 const client = new FastAPIClient(config);
 
@@ -11,6 +12,7 @@ const Home = () => {
 
      const [loading, setLoading] = useState(true)
      const [castIrons, setCastIrons] = useState([])
+     const [isTextChanged, setIsTextChanged] = useToggle('');
 
      useEffect(() => {
           // FETCH THE CAST IRON
@@ -40,6 +42,7 @@ const Home = () => {
                          <h1 className="text-3xl font-medium">
                               The Precast Toolkit - A Kubernetes orchestrated React - FastAPI - PostgreSQL Stack
                          </h1>
+                         <button type='button' className='w-64 rounded-full bg-slate-200 text-slate-700 p-4 m-4' onClick={setIsTextChanged}>{isTextChanged ? 'Toggled' : 'Click to Toggle'}</button>
                          <div className='container mx-auto'>
                               <CastIron castIrons = {castIrons} />
                          </div>
