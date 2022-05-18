@@ -1,12 +1,8 @@
 import React from 'react';
 import CastIron from "../../components/CastIron";
-import useToggle from '../../hooks/useToggle'
 
 
 const Home = () => {
-
-     const [isTextChanged, setIsTextChanged] = useToggle('');
-
 
      return (
           <>
@@ -15,7 +11,6 @@ const Home = () => {
                          <h1 className="mb-6 text-3xl font-medium">
                               The Precast Toolkit - A Kubernetes orchestrated React - FastAPI - PostgreSQL Stack
                          </h1>
-                         <button className='bg-stone-800 text-grey' onClick={setIsTextChanged}>{isTextChanged ? 'Toggled' : 'Click to Toggle'}</button>
                          <CastIron />
                     </div>
                </section>
