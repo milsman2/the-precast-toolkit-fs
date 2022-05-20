@@ -25,7 +25,7 @@ const CastIron = () => {
           {!loading && error && <p className="errMsg">{error}</p>}
           {!loading && !error && 
           <>
-              <div className='max-w-[1240px] mx-auto grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+              <div className='max-w-[1240px] mx-auto grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {castIrons.length && (
                   castIrons.map((castIron) => (
                       <CastIronCard key={castIron.id} castIron={castIron}  />
