@@ -20,24 +20,23 @@ const CastIron = () => {
     }, [])
 
     return (
-        <article className='flex flex-wrap flex-col'>
-            <h2>Cast Iron</h2>
-            {loading && <p>Loading...</p>}
-            {!loading && error && <p className="errMsg">{error}</p>}
-            {!loading && !error && 
-            <>
-                <div className='grid grid-cols-3 gap-x-6'>
-                  {castIrons.length && (
-                    castIrons.map((castIron) => (
-                        <CastIronCard key={castIron.id} castIron={castIron}  />
-                      ))
-                  )}
-                  {!castIrons.length && (
-                      <p>No cast iron found!</p>
-                  )}
-                </div>
-            </>
-            }
+        <article>
+          {loading && <p>Loading...</p>}
+          {!loading && error && <p className="errMsg">{error}</p>}
+          {!loading && !error && 
+          <>
+              <div className='max-w-[1240px] mx-auto grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                {castIrons.length && (
+                  castIrons.map((castIron) => (
+                      <CastIronCard key={castIron.id} castIron={castIron}  />
+                    ))
+                )}
+                {!castIrons.length && (
+                    <p>No cast iron found!</p>
+                )}
+              </div>
+          </>
+          }
         </article>
     );
 }
