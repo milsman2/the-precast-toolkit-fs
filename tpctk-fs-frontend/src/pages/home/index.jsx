@@ -1,16 +1,14 @@
 import React from 'react';
-import CastIron from "../../components/CastIron";
-
+import video from '../../assets/video.mp4'
 
 const Home = () => {
-
      return (
           <>
-               <section className="bg-black text-white w-full relative flex flex-col">
-                    <h1 className="mb-6 text-3xl font-medium">
-                         The Precast Toolkit - A Kubernetes orchestrated React - FastAPI - PostgreSQL Stack
-                    </h1>
-                    <CastIron />
+               <section className="bg-black text-white relative flex flex-col justify-centern flex-1 overflow-y-scroll">
+                    <h2 className='px-10 text-xl p-4 flex'>
+                         A Kubernetes orchestrated React - FastAPI - PostgreSQL Stack
+                    </h2>
+                    <video className='flex flex-1' src={video} autoPlay loop muted />
                </section>
           </>
      )
