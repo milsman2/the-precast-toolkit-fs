@@ -8,7 +8,7 @@ function DashboardHeader() {
 
 
   return (
-      <nav className="flex justify-between flex-wrap content-center bg-amber-800 p-4 h-12">
+      <nav className="flex justify-between flex-wrap content-center bg-amber-800 p-4">
         <div className="flex items-center text-white mr-6">
             <Link to="/">
                 <span className="font-semibold text-xl tracking-tight">The Precast Toolkit - Full Stack</span>
