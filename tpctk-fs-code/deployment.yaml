@@ -38,6 +38,6 @@ spec:
           - name: tpctk-fs-code-volume
             mountPath: /config
       volumes:
-        - name: tpctk-fs-code-volume
+        - name: pvc
           persistentVolumeClaim:
             claimName: tpctk-fs-code-server-pvc
