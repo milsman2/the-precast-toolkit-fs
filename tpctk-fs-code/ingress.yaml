@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tpctk-fs-code
+  namespace: the-precast-toolkit-fs
+  annotations:
+    cert-manager.io/cluster-issuer: 'staging-issuer-amd64'
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: code.precasttoolkit.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: tpctk-fs-code
+            port:
+              number: 80
+  tls:
+    - hosts:
+        - code.precasttoolkit.com
+      secretName: tpctk-fs-code-tls-staging-v1

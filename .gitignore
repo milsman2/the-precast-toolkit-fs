@@ -364,3 +364,4 @@ tpctk-fs-pgadmin4/pgadmin-secret.yaml
 tpctk-fs-mysql/mysql-secret.yaml
 tpctk-fs-umami/umami-config.yaml
 tpctk-fs-kube-backend/fastapi-secret.yaml
+tpctk-fs-code/tpctk-fs-code-secret.yaml

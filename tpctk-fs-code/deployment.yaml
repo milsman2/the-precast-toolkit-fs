@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: tpctk-fs-code
+  name: tpctk-fs-code
+  namespace: the-precast-toolkit-fs
+spec:
+  selector:
+    matchLabels:
+      app: tpctk-fs-code
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tpctk-fs-code
+    spec:
+      containers:
+      - image: linuxserver/code-server:4.3.0
+        imagePullPolicy: IfNotPresent
+        name: code-server
+        env:
+        - name: TZ
+          value: "America/Chicago"
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: tpctk-fs-code-secret
+              key: PASSWORD
+        - name: SUDO_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: tpctk-fs-code-secret
+              key: SUDO_PASSWORD
+        - name: PROXY_DOMAIN
+          value: "https://code.precasttoolkit.com"
+        volumeMounts:
+          - name: tpctk-fs-code-volume
+            mountPath: /config
+      volumes:
+        - name: tpctk-fs-code-volume
+          persistentVolumeClaim:
+            claimName: tpctk-fs-code-server-pvc
