@@ -35,9 +35,9 @@ spec:
         - name: PROXY_DOMAIN
           value: "https://code.precasttoolkit.com"
         volumeMounts:
-          - name: tpctk-fs-code-volume
+          - name: tpctk-fs-code-pvc
             mountPath: /config
       volumes:
-        - name: pvc
+        - name: tpctk-fs-code-pvc
           persistentVolumeClaim:
-            claimName: tpctk-fs-code-server-pvc
+            claimName: tpctk-fs-code-pvc
