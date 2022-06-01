@@ -4,7 +4,7 @@ metadata:
   name: tpctk-fs-code
   namespace: the-precast-toolkit-fs
   annotations:
-    cert-manager.io/cluster-issuer: 'staging-issuer-amd64'
+    cert-manager.io/cluster-issuer: 'prod-issuer-amd64'
 spec:
   ingressClassName: nginx
   rules:
@@ -21,4 +21,4 @@ spec:
   tls:
     - hosts:
         - code.precasttoolkit.com
-      secretName: tpctk-fs-code-tls-staging-v1
+      secretName: tpctk-fs-code-tls-prod-v1
