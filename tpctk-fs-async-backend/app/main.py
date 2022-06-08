@@ -31,7 +31,11 @@ def get_application() -> FastAPI:
     "http://fastapi.precastttolkit.com",
     "https://fastapi.precastttolkit.com",
     "http://fs.precasttoolkit.com",
-    "https://fs.precasttoolkit.com"
+    "https://fs.precasttoolkit.com",
+    "https://code.precasttoolkit.com",
+    "http://code.precasttoolkit.com"
+    "https://code.precasttoolkit.com/absproxy/3000",
+    "http://code.precasttoolkit.com/absproxy/3000"
 ]
 
     application.add_middleware(
