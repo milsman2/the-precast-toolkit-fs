@@ -7,11 +7,9 @@ import { store } from './app/store';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
-import { extendedApiSlice } from './features/posts/postsSlice';
-import { usersApiSlice } from './features/users/usersSlice';
+import { extendedApiSlice } from './features/castIrons/castIronSlice'
 
-store.dispatch(extendedApiSlice.endpoints.getPosts.initiate());
-store.dispatch(usersApiSlice.endpoints.getUsers.initiate());
+store.dispatch(extendedApiSlice.endpoints.getCastIrons.initiate());
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
