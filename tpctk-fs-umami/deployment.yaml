@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: umami
-        image: ghcr.io/mikecao/umami:mysql-v1.31.0
+        image: ghcr.io/mikecao/umami:mysql-v1.32.1
         ports:
         - containerPort: 3000
           name: umami
