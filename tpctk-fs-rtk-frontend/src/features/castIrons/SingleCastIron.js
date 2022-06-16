@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 import { selectCastIronById } from './castIronSlice'
 import V4880 from '../../assets/V4880.PNG'
+import BGRATE from '../../assets/BGRATE.PNG'
 
 import { useParams } from 'react-router-dom'
 
@@ -36,7 +37,7 @@ const SingleCastIron = () => {
                         <p>Accucast Code: {castIron?.Accucast_code}</p>
                     </h2>
                 </div>
-                <img className='h-96 object-cover' src={V4880} alt="4880-3"/>
+                <img className='h-96 object-cover' src={BGRATE} alt="4880-3"/>
             </article>
         </div>
     )
