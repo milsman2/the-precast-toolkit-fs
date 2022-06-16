@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import V48803 from '../../assets/V48803.PNG'
 
 const CastIronCard = ({castIron}) => {
 
@@ -16,6 +17,7 @@ const CastIronCard = ({castIron}) => {
                 <p>Accucast Code: {castIron?.Accucast_code}</p>
             </h2>
             <Link to={`${castIron?.id}`}>View Cast Iron</Link>
+            <img className='h-fit object-cover' src={V48803} alt="4880-3"/>
         </article>
   )
 }
