@@ -4,14 +4,14 @@ from pydantic import BaseModel
   
 
 class CastIronBase(BaseModel):
-    TPCTK_Code: str
-    label: str
-    Vulcan_style_code: str
-    EJ_code: str
-    SIP_code: str
-    Accucast_code: str
-    description: str
-    avg_weight: int
+    TPCTK_Code: Optional[str]
+    label: Optional[str]
+    Vulcan_style_code: Optional[str]
+    EJ_code: Optional[str]
+    SIP_code: Optional[str]
+    Accucast_code: Optional[str]
+    description: Optional[str]
+    avg_weight: Optional[int]
 
 # Properties to receive via API on creation
 class CastIronCreate(CastIronBase):
@@ -23,14 +23,6 @@ class CastIronUpdate(CastIronBase):
 
 class CastIronUpdateRestricted(BaseModel):
     id: int
-    TPCTK_Code: str
-    label: str
-    Vulcan_style_code: str
-    EJ_code: str
-    SIP_code: str
-    Accucast_code: str
-    description: str
-    avg_weight: int
     
 class CastIronInDBBase(CastIronBase):
     id: int
