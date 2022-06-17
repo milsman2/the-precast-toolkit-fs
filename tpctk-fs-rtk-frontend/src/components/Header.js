@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
 
   // STATE WHICH WE WILL USE TO TOGGLE THE MENU ON HAMBURGER BUTTON PRESS
   const [toggleMenu, setToggleMenu] = useState(false);
-
 
   return (
       <nav className="flex justify-between flex-wrap content-center bg-amber-800 p-4 sticky top-0">
@@ -47,4 +46,4 @@ const Header = () => {
   );
 }
 
-export default Header;
+export default Header

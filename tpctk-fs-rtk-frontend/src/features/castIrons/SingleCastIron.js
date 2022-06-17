@@ -1,7 +1,5 @@
 import { useSelector } from 'react-redux'
 import { selectCastIronById } from './castIronSlice'
-import V4880 from '../../assets/V4880.PNG'
-import BGRATE from '../../assets/BGRATE.PNG'
 
 import { useParams } from 'react-router-dom'
 
@@ -10,8 +8,6 @@ const SingleCastIron = () => {
     const { castIronId } = useParams()
 
     const castIron = useSelector((state) => selectCastIronById(state, Number(castIronId)))
-
-    console.log(castIronId)
 
     if (!castIron) {
         return (
@@ -22,23 +18,21 @@ const SingleCastIron = () => {
     }
 
     return (
-        <div className='bg-black text-white flex-col p-6 flex-1 content-center justify-center items-center'>
-            <article className='bg-gradient-to-t from-stone-400 overflow-hidden rounded-lg shadow-lg h-full flex flex-row items-center justify-center'>
+        <div className='bg-black hero min-h-screen text-white'>
+            <div className='hero-content flex-col lg:flex-row'>
+                <img className='max-w-sm rounded-lg shadow-2xl' src={require(`../../assets/Grate${castIron?.id}.PNG`)} alt="4880-3"/>
                 <div className='flex flex-col items-center'>
-                    <header className='p-4 md:p-4'>
-                        <h1 className="text-lg">
-                            <div>{castIron?.description}</div>
-                        </h1>
-                    </header>
-                    <h2 className='ml-8 p-1 text-grey-darker'>
+                    <h1 className='text-5xl font-bold'>
+                        <div>{castIron?.description}</div>
+                    </h1>
+                    <h2 className='py-6'>
                         <p>Vulcan Code: {castIron?.Vulcan_style_code}</p>
                         <p>SIP Code: {castIron?.SIP_code}</p>
                         <p>EJ Code: {castIron?.EJ_code}</p>
                         <p>Accucast Code: {castIron?.Accucast_code}</p>
                     </h2>
                 </div>
-                <img className='h-96 object-cover' src={BGRATE} alt="4880-3"/>
-            </article>
+            </div>
         </div>
     )
 }
