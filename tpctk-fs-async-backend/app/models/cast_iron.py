@@ -6,6 +6,7 @@ from app.db.base_class import Base
 
 class Cast_Iron(Base):
     id = Column(Integer, primary_key=True, index=True)
+    TPCTK_Code = Column(String(32))
     label = Column(String(256), nullable=False)
     Vulcan_style_code = Column(String(64), nullable=False, unique=False)
     EJ_code = Column(String(64))
