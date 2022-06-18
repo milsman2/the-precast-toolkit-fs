@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom'
-import V4880 from '../../assets/V4880.PNG'
 
 const CastIronCard = ({castIron}) => {
 
     return (
         <div className='card bg-gray-500'>
             <figure>
-                <img src={V4880} alt="4880-3"/>
+                <img src={require(`../../assets/${castIron?.TPCTK_Code}.PNG`)} alt="4880-3"/>
             </figure>
             <div className='card-body items-center text-center'>
                 <h2 className='card-title'>{castIron?.description}</h2>

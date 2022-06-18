@@ -19,8 +19,8 @@ const SingleCastIron = () => {
 
     return (
         <div className='bg-black hero min-h-screen text-white'>
-            <div className='hero-content flex-col lg:flex-row'>
-                <img className='max-w-sm rounded-lg shadow-2xl' src={require(`../../assets/Grate${castIron?.id}.PNG`)} alt="4880-3"/>
+            <div className='hero-content flex-col bg-gray-400 lg:flex-row'>
+                <img className='max-w-sm rounded-lg' src={require(`../../assets/${castIron?.TPCTK_Code}.PNG`)} alt="4880-3"/>
                 <div className='flex flex-col items-center'>
                     <h1 className='text-5xl font-bold'>
                         <div>{castIron?.description}</div>
