@@ -16,7 +16,7 @@ spec:
         app: tpctk-fs-code
     spec:
       containers:
-      - image: linuxserver/code-server:4.5.0
+      - image: linuxserver/code-server:4.5.1
         imagePullPolicy: IfNotPresent
         name: code-server
         env:
